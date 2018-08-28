@@ -1,0 +1,16 @@
+<%- include('./partials/header') %>
+<div class="post-cards p-4">
+    <% for (let cluck of cluckr) { %>
+        <div class="mb-4 container border rounded p-3 d-flex flex-row">
+        <img class="img-thumbnail mr-3" style="max-height: 100px" src="https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+        <div>
+        <p class="font-weight-bold"><%= cluck.username %></p>
+        <p class="font-weight-light"><%= cluck.content %></p>
+        <% if (cluck.image_url) { %>
+        <img src="<%= cluck.image_url %>" class="img-fluid">
+        <% } %>
+        </div>
+        </div>
+    <% } %>
+  </div>
+<%- include('./partials/footer') %>
