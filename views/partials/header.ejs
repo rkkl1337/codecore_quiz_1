@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Codecore Quiz 1</title>
+
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <script src="/scripts/jquery-3.3.1.slim.min.js"></script>
+    <script src="/scripts/popper.min.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+<body>
+<header>
+    <nav class="navbar navbar-expand-sm border-bottom py-0">
+        <a class="navbar-brand py-0" href="/cluckr" style="font-size: 3rem">🐓</a>
+        
+        <% if(username) { %>
+        <a type="button" class="btn btn-dark btn-lg ml-auto" href="/cluckr/new">Cluck!</a>
+        <% } else { %>
+        <a type="button" class="btn btn-dark btn-lg ml-auto" href="/">Cluck!</a>
+        <% } %>
+
+        
+        <% if (username) { %>
+        <span class="navbar-text text-secondary ml-2" style="font-size: 2rem"><%= username %></span>
+        <form action="/sign_out" method="POST">
+        <button class="btn btn-dark btn-lg ml-2" type="submit">Sign Out</button>
+        </form>
+        
+        <% } else { %>
+        <form action="/sign_in" method="POST">
+        <button class="btn btn-dark btn-lg ml-2" type="submit">Sign In</button>
+        <% } %>
+        </form>
+    </nav>
+</header>
